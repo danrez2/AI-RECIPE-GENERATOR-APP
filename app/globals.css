@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 50, 50, 50; /* Slightly lighter dark grey for text */
+  --background-start-rgb: 255, 248, 240; /* Warm beige for start */
+  --background-end-rgb: 255, 255, 255; /* Soft white for end */
+  --highlight-color: 255, 140, 0; /* Orange for highlights and accents */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 240, 240, 240; /* Light grey text for dark mode */
+    --background-start-rgb: 34, 34, 34; /* Dark grey for start */
+    --background-end-rgb: 0, 0, 0; /* Black for end */
+    --highlight-color: 255, 165, 0; /* Lighter orange for highlights in dark mode */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(var(--highlight-color)); /* Warm orange color for headings */
+  font-family: 'Merriweather', serif; /* Add a serif font for headings */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: rgb(var(--highlight-color));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #e68a00; /* Darker orange on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+input {
+  border: 2px solid rgb(var(--highlight-color));
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+input:focus {
+  outline: none;
+  border-color: #e68a00; /* Darker orange on focus */
+  box-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+}
+
+/* Remove debugging styles */
+* {
+  border: none;
+}
